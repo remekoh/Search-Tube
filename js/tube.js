@@ -21,8 +21,8 @@ $(document).ready(function() {
 
             $('#search-results').empty();
             $.each(response.items, function(index, value) {
-                $('#search-results').append('<li><img src="' + response.items[index].snippet.thumbnails.medium.url + '""></li>');
-             console.log(response.items[index].snippet.thumbnails.medium.url)
+                $('#search-results').append('<li><a href="http://www.youtube.com/watch?v=' + response.items[index].id.videoId + '"><img src="' + response.items[index].snippet.thumbnails.medium.url + '""></a></li>');
+             console.log(response.items[index].id.videoId);
             });
         });
     });
@@ -37,3 +37,6 @@ $(document).ready(function() {
 //     Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
 //   }
 // }
+
+
+response.items[index].id.videoId
