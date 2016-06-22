@@ -1,25 +1,32 @@
 $(document).ready(function() {
+
+    // performs a Get Request on JSON data and passes url and object of parameters then runs showResults
     function grabResults(query) {
-        $.getJSON('https://www.googleapis.com/youtube/v3/search',  {
+            var params = {
                 'part': 'snippet',
                 'key': 'AIzaSyDvOx_WA5SemhCYmBf4CwwpFd02bF8DYNQ',
-                'q': query
+                'q': searchWord
+            }; 
+            url = 'https://www.googleapis.com/youtube/v3/search';
 
-            },
-            function(data) {
-                showResults(data.items);
-                console.log(data);
-            });
-    }
+            $.getJSON(url, params, function(data){
+                showResults(data.Search);
+                console.log(data.Search);
+            });        
+        }
 
     function showResults(videos){
     	var html ='';
-
+        $.each(videos, function(index, video){
+            console.log(video)
+        });
     }
 
-    $('#searh-form').submit(function (event) {
+    $('#search-term').submit(function(event) {
     	event.preventDefault();
-    	grabResults($('#query').val());
+        var searchWord = $('#query').val();
+    	grabResults(searchWord);
+        console.log(searchWord);
     });
 
 
