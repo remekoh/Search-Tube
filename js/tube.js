@@ -1,36 +1,33 @@
 $(document).ready(function() {
 
-    // performs a Get Request on JSON data and passes url and object of parameters then runs showResults
-    function grabResults(query) {
-            var params = {
-                'part': 'snippet',
-                'key': 'AIzaSyDvOx_WA5SemhCYmBf4CwwpFd02bF8DYNQ',
-                'q': searchWord
-            }; 
-            url = 'https://www.googleapis.com/youtube/v3/search';
+/*============ AJAX =============*/
 
-            $.getJSON(url, params, function(data){
-                showResults(data.Search);
-                console.log(data.Search);
-            });        
-        }
+    $('#search-term').submit(function(event){
+        event.preventDefault();
+        var userSearch = $('#query').val();
+        console.log(userSearch);
+        var url = 'https://www.googleapis.com/youtube/v3/search';
+        $.ajax({
+            method: "GET",
+            url: url,
+            dataType: "json",
+            data: {
+                key: "AIzaSyAcKio8lN38bzmJmYP6dzHc9I1KhBVQCWc",
+                part: 'snippet',
+                q: userSearch
+            },
 
-    function showResults(videos){
-    	var html ='';
-        $.each(videos, function(index, video){
-            console.log(video)
+        }).done(function(response) {
+
+            $('#search-results').empty();
+            $.each(response.items, function(index, value) {
+                $('#search-results').append('<li><img src="' + response.items[index].snippet.thumbnails.medium.url + '""></li>');
+             console.log(response.items[index].snippet.thumbnails.medium.url)
+            });
         });
-    }
-
-    $('#search-term').submit(function(event) {
-    	event.preventDefault();
-        var searchWord = $('#query').val();
-    	grabResults(searchWord);
-        console.log(searchWord);
     });
-
-
-}); //document ready
+            
+});     
 
 
 // function searchByKeyword() {
