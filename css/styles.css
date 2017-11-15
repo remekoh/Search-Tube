@@ -1,19 +1,28 @@
 body {
-	padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 2.5em;
   background-color: #eee;
 	font-family: 'Lato', sans-serif;
 }
 
-.heading {
+.tube-heading {
+  padding-top: 6em;
+  padding-bottom: 6em;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.form-heading {
 	font-family: 'Roboto', sans-serif;
-	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 0.625em;
+}
+
+p {
+  font-size: 1em;
 }
 
 .form-search {
-	max-width: 330px;
-	padding: 15px;
+	max-width: 20.625em;
+	padding: 1em;
 	margin: 0 auto;
 	font-weight: 400;
 }
@@ -22,8 +31,8 @@ body {
 	position: relative;
 	box-sizing: border-box;
 	height: auto;
-	padding: 10px;
-	font-size: 16px;
+	padding: 0.625em;
+	font-size: 1em;
 }
 
 .form-search .form-control:focus {
@@ -31,9 +40,23 @@ body {
 }
 
 .form-search input[type="text"] {
-	margin-bottom: 10px;
+	margin-bottom: 0.625em;
 }
 
+button {
+  cursor:pointer;
+}
+
+.results {
+  min-height: 50em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #f7f7f7;
+}
+
+#search-results {
+  list-style-type: none;
+}
 /*
 body {
   padding-top: 40px;

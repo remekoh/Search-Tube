@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="A web application that displays the top YouTube vidoes based on your search terms">
+		<meta name="author" content="Reme Ekoh">
 		<link rel="icon" href="favicon.ico">
 		<title>Search Tube</title>
 		<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
@@ -10,17 +12,22 @@
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="container">
-			<form id="search-term" class="form-search">
-				<h2 class="heading">Search Tube</h2>
-				<input type="text" class="form-control" placeholder="What would you like to see?" id="query" autofocus required>
-				<button class="btn btn-lg btn-primary btn-block" type="submit" id="submit">Show me</button>
-			</form>
-		</div>
-		<div>
-			<ul id="search-results">
-			</ul>
-		</div>
+		<section class="tube-heading text-center">
+			<div class="container">
+				<form id="search-term" class="form-search">
+					<h2 class="form-heading">Search Tube</h2>
+					<p>Enter a search term below to find the top YouTube videos</p>
+					<input type="text" class="form-control" placeholder="What would you like to see?" id="query" autofocus required>
+					<button class="btn btn-lg btn-primary btn-block" type="submit" id="submit">Show me</button>
+				</form>
+			</div>
+		</section>
+		<section class="results">
+			<div class="container">
+				<ul id="search-results"></ul>
+			</div>
+		</section>
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="js/tube.js"></script>
