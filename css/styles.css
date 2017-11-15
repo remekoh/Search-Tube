@@ -70,4 +70,8 @@ button {
   #search-results {
     display: inline-grid;
   }
+  .card {
+    min-height: 18.750em;
+    min-width: 18.750em;
+  }
 }
