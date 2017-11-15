@@ -5,7 +5,6 @@ $(document).ready(function() {
 	$('#search-term').submit(function(event){
 		event.preventDefault();
 		var userSearch = $('#query').val();
-		console.log(userSearch);
 		var url = 'https://www.googleapis.com/youtube/v3/search';
 		$.ajax({
 			method: "GET",
@@ -23,8 +22,9 @@ $(document).ready(function() {
 			$('#search-results').empty();
 			
 			$.each(response.items, function(index, value) {
-					$('#search-results').append('<li><a href="http://www.youtube.com/watch?v=' + response.items[index].id.videoId + '"><img src="' + response.items[index].snippet.thumbnails.medium.url + '""></a></li>');
-				console.log(response.items[index].id.videoId);
+					$('#search-results').append(
+						'<div class="card">' + '<a href="http://www.youtube.com/watch?v=' + response.items[index].id.videoId + '"><img src="' + response.items[index].snippet.thumbnails.medium.url + '"></a>' + '<p class="result-title">' + response.items[index].snippet.title +' </p>' + '</div>'
+					);
 			});
 		});
 		$('#search-term')[0].reset();

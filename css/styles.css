@@ -1,6 +1,4 @@
 body {
-  padding-bottom: 2.5em;
-  background-color: #eee;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -8,7 +6,7 @@ body {
   padding-top: 6em;
   padding-bottom: 6em;
   margin-bottom: 0;
-  background-color: #fff;
+  background-color: #f7f7f7;
 }
 
 .form-heading {
@@ -51,49 +49,30 @@ button {
   min-height: 50em;
   padding-top: 3em;
   padding-bottom: 3em;
-  background-color: #f7f7f7;
+  background-color: #fff;
 }
 
-#search-results {
-  list-style-type: none;
-}
-/*
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75em;
+  margin-bottom: 2em;
+  border: 0;
 }
 
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+.result-title {
+  font-size: 1em;
+  font-weight: 500;
+  padding-top: 1em;
 }
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
+
+@media only screen and (max-device-width: 667px) {
+  #search-results {
+    display: inline-grid;
+  }
+
+  .card {
+    min-height: 18.750em;
+    min-width: 18.750em;
+  }
 }
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-/
